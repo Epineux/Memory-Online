@@ -5,7 +5,7 @@ const Timer = () => {
   const gameContext = useContext(GameContext);
 
   useEffect(() => {
-    let intervalId: NodeJS.Timeout;
+    let intervalId: ReturnType<typeof setInterval>;
 
     if (gameContext?.game.hasStarted && !gameContext?.game.isOver) {
       intervalId = setInterval(() => {
